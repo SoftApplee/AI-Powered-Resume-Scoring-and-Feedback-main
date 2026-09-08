@@ -1,0 +1,26 @@
+# Node.js
+node_modules/
+npm-debug.log
+*.log
+
+# Environment variables (NEVER commit secrets!)
+.env
+.env.local
+.env.*.local
+
+# Uploads / User files
+uploads/
+
+# ML Models / Data
+ml_model/*.pkl
+ml_model/*.joblib
+ml_model/*.h5
+ml_model/*.sav
+ml_model/*.pt
+
+# VS Code
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store

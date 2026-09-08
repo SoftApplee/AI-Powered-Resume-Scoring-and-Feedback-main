@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <h1>Resume Portal</h1>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="nav-links" id="navLinks">
+                        <li class="auth-required hidden"><a href="#dashboard">Dashboard</a></li>
+                        <li class="auth-required hidden"><a href="#profile">Profile</a></li>
+                        <li class="auth-required hidden"><a href="#resume">Resume</a></li>
+                        <li class="admin-only hidden"><a href="#admin">Admin</a></li>
+                        <li class="auth-required hidden"><a href="#" id="logoutBtn">Logout</a></li>
+                        <li class="no-auth"><a href="#login">Login</a></li>
+                        <li class="no-auth"><a href="#register">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="container main-content">
+            <!-- Pages will be dynamically loaded here -->
+            <div id="pages">
+                <!-- Home Page -->
+                <section id="home" class="page active">
+                    <div class="hero">
+                        <h1>Welcome to Resume Portal</h1>
+                        <p>Store, manage, and share your professional resume with ease</p>
+                        <div class="cta-buttons">
+                            <a href="#register" class="btn btn-primary">Get Started</a>
+                            <a href="#login" class="btn btn-secondary">Login</a>
+                        </div>
+                    </div>
+                    <div class="features">
+                        <div class="feature-card">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Upload Resume</h3>
+                            <p>Store your resume securely in our database</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user-circle"></i>
+                            <h3>Create Profile</h3>
+                            <p>Manage your professional profile</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-share-alt"></i>
+                            <h3>Easy Sharing</h3>
+                            <p>Share your resume with potential employers</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Register Page -->
+                <section id="register" class="page">
+                    <div class="auth-container">
+                        <h2>Create an Account</h2>
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                        <p class="form-footer">Already have an account? <a href="#login">Login</a></p>
+                    </div>
+                </section>
+
+                <!-- Login Page -->
+                <section id="login" class="page">
+                    <div class="auth-container">
+                        <h2>Login to Your Account</h2>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginEmail">Email</label>
+                                <input type="email" id="loginEmail" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                        <p class="form-footer">Don't have an account? <a href="#register">Register</a></p>
+                    </div>
+                </section>
+
+                <!-- Dashboard Page -->
+                <section id="dashboard" class="page auth-required">
+                    <div class="dashboard-container">
+                      <h2>Welcome, <span id="userGreeting">User</span>!</h2>
+                      <div class="dashboard-summary">
+                        <div class="summary-card">
+                          <i class="fas fa-file-alt"></i>
+                          <h3>Resume Status</h3>
+                          <p id="resumeStatus">Not uploaded</p>
+                          <a href="#resume" class="btn btn-sm">Manage Resume</a>
+                        </div>
+                  
+                        <div class="summary-card">
+                          <i class="fas fa-chart-line"></i>
+                          <h3>Resume Score</h3>
+                          <p id="resumeScore">N/A</p>
+                        </div>
+                  
+                        <div class="summary-card">
+                          <i class="fas fa-comments"></i>
+                          <h3>Feedback</h3>
+                          <p id="resumeFeedback">No feedback yet</p>
+                        </div>
+                  
+                        <div class="summary-card">
+                          <i class="fas fa-user"></i>
+                          <h3>Profile Completion</h3>
+                          <div class="progress-bar">
+                            <div class="progress" id="profileProgress" style="width: 0%"></div>
+                          </div>
+                          <p id="profilePercentage">0%</p>
+                          <a href="#profile" class="btn btn-sm">Update Profile</a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>                  
+
+                <!-- Profile Page -->
+                <section id="profile" class="page auth-required">
+                    <div class="profile-container">
+                        <h2>Your Profile</h2>
+                        <form id="profileForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="headline">Professional Headline</label>
+                                <input type="text" id="headline" name="headline" placeholder="e.g. Senior Software Engineer">
+                            </div>
+                            <div class="form-group">
+                                <label for="summary">Professional Summary</label>
+                                <textarea id="summary" name="summary" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Profile</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Resume Page -->
+                <section id="resume" class="page auth-required">
+                    <div class="resume-container">
+                        <h2>Resume Management</h2>
+                        <div id="resumeDisplay" class="hidden resume-preview">
+                            <div class="resume-info">
+                                <h3>Current Resume</h3>
+                                <p><strong>Filename:</strong> <span id="resumeFilename"></span></p>
+                                <p><strong>Uploaded:</strong> <span id="resumeDate"></span></p>
+                                <div class="resume-actions">
+                                    <a href="#" id="viewResumeBtn" class="btn btn-secondary">View Resume</a>
+                                    <a href="#" id="deleteResumeBtn" class="btn btn-danger">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="uploadSection">
+                            <h3>Upload Resume</h3>
+                            <p>Accepted file types: PDF, DOC, DOCX (Max size: 5MB)</p>
+                            <form id="resumeUploadForm" enctype="multipart/form-data">
+                                <div class="file-upload">
+                                    <input type="file" id="resumeFile" name="resume" accept=".pdf,.doc,.docx" required>
+                                    <label for="resumeFile" class="file-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>Choose a file</span>
+                                    </label>
+                                    <div id="fileName" class="file-name"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Upload Resume</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Admin Page -->
+                <section id="admin" class="page admin-only">
+                    <div class="admin-container">
+                        <h2>Admin Dashboard</h2>
+                        <div class="admin-table-container">
+                            <h3>User Resumes</h3>
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Email</th>
+                                        <th>Resume Name</th>
+                                        <th>Upload Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resumesTableBody">
+                                    <!-- Resume data will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Toast notification -->
+        <div id="toast" class="toast hidden">
+            <div class="toast-content">
+                <i class="fas fa-info-circle toast-icon"></i>
+                <div class="toast-message">Notification message</div>
+            </div>
+            <div class="toast-progress"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Resume Portal. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

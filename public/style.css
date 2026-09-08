@@ -1,0 +1,386 @@
+/* ---------------
+   Global Styles
+   --------------- */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  /* Container used frequently */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* ---------------
+     Navbar
+     --------------- */
+  .navbar {
+    background-color: #333;
+    color: #fff;
+  }
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-brand h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .navbar-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  .navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .navbar-menu a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Show/Hide nav links depending on state */
+  .hidden {
+    display: none;
+  }
+  
+  /* ---------------
+     Hero Section
+     --------------- */
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #37b1f5, #4ad0e1);
+    color: #fff;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .cta-buttons .btn {
+    margin: 0 0.5rem;
+  }
+  
+  /* ---------------
+     Features
+     --------------- */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem 0;
+    justify-content: center;
+  }
+  .feature-card {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    padding: 1.5rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .feature-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #37b1f5;
+  }
+  .feature-card h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* ---------------
+     Main Content
+     --------------- */
+  .main-content {
+    flex: 1;
+    padding: 2rem 0;
+  }
+  .page {
+    display: none;
+  }
+  .page.active {
+    display: block;
+  }
+  
+  /* ---------------
+     Auth Forms
+     --------------- */
+  .auth-container {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .auth-container h2 {
+    margin-bottom: 1.5rem;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .form-footer {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .form-footer a {
+    color: #37b1f5;
+    text-decoration: none;
+  }
+  .form-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ---------------
+     Buttons
+     --------------- */
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #37b1f5;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .btn:hover {
+    opacity: 0.9;
+  }
+  .btn-secondary {
+    background-color: #555;
+  }
+  .btn-danger {
+    background-color: #e74c3c;
+  }
+  .btn-sm {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  /* ---------------
+     Dashboard
+     --------------- */
+  .dashboard-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .dashboard-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .summary-card {
+    flex: 1;
+    min-width: 200px;
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  }
+  .summary-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #37b1f5;
+  }
+  .progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 10px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+  }
+  .progress {
+    background-color: #37b1f5;
+    height: 100%;
+    width: 0%;
+  }
+  
+  /* ---------------
+     Profile Page
+     --------------- */
+  .profile-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .profile-container h2 {
+    margin-bottom: 1.5rem;
+  }
+  .form-row {
+    display: flex;
+    gap: 1rem;
+  }
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  /* ---------------
+     Resume Page
+     --------------- */
+  .resume-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .resume-container h2 {
+    margin-bottom: 1.5rem;
+  }
+  .resume-preview {
+    margin-bottom: 2rem;
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #fafafa;
+  }
+  .resume-actions .btn {
+    margin-right: 0.5rem;
+  }
+  .file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .file-label {
+    display: inline-block;
+    background-color: #eee;
+    padding: 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .file-label i {
+    margin-right: 0.3rem;
+  }
+  .file-name {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* ---------------
+     Admin Page
+     --------------- */
+  .admin-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .admin-table-container h3 {
+    margin-bottom: 1rem;
+  }
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .admin-table th,
+  .admin-table td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* ---------------
+     Toast Notification
+     --------------- */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    padding: 1rem;
+    z-index: 9999;
+    min-width: 250px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  .toast.hidden {
+    display: none;
+  }
+  .toast-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .toast-icon {
+    font-size: 1.2rem;
+  }
+  .toast-message {
+    flex: 1;
+  }
+  .toast-progress {
+    height: 3px;
+    background-color: #37b1f5;
+    width: 100%;
+    margin-top: 0.5rem;
+    animation: toastProgress 3s linear forwards;
+  }
+  @keyframes toastProgress {
+    from { width: 100%; }
+    to { width: 0; }
+  }
+  
+  /* ---------------
+     Footer
+     --------------- */
+  .footer {
+    background-color: #333;
+    padding: 1rem 0;
+    color: #fff;
+    text-align: center;
+  }
+  .footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  

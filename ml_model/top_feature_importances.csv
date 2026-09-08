@@ -1,0 +1,28 @@
+feature,importance
+num__Experience (Years),0.7207655755679961
+num__Projects Count,0.23746285274096496
+certs__Certifications_nan,0.010354458087458076
+num__Salary Expectation ($),0.00586502130838331
+skills__python,0.002423236492811651
+skills__sql,0.002113185334269188
+skills__nlp,0.001625226219578442
+skills__networking,0.0014317638086902057
+skills__tensorflow,0.0014298825708412722
+skills__pytorch,0.0013684747040816072
+skills__deep,0.0012544939548032005
+skills__cybersecurity,0.0011788068403127715
+education__Education_B.Sc,0.0011644292624327054
+skills__learning,0.0011177343030980976
+skills__react,0.0011076456227459516
+skills__linux,0.00106373202653903
+certs__Certifications_Google ML,0.0010170063597679468
+education__Education_B.Tech,0.0009165921150305031
+skills__machine,0.0009061744561037773
+certs__Certifications_AWS Certified,0.0008230329402946273
+education__Education_MBA,0.00077956888394401
+skills__hacking,0.0007196035528094543
+skills__java,0.0006828527444209327
+skills__ethical,0.0006815107873095269
+education__Education_PhD,0.0006426383262384029
+education__Education_M.Tech,0.0005822193936835288
+certs__Certifications_Deep Learning Specialization,0.0005222815953906073
